@@ -1,0 +1,56 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form (ngSubmit)="processForm()">
+                <fieldset>
+                    
+                    <div class="form-group">
+                        <label for="name"><span class="req">* </span> Name: 
+                             </label>
+                        <input required type="text" [(ngModel)]="user.name" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter room name..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><span class="req">* </span> Email: </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.email" name="email" id="email" required
+                            placeholder="Enter Email" />
+                        <div id="errFirst"></div>
+                    </div>
+                   
+                    <div  class="form-group">
+                            <label for="sel2">Assign Role:</label>
+                            <select multiple class="form-control" [(ngModel)]="user.roles"  name="roles"  id="roles">
+                              <option [value]="item"  *ngFor="let item of roles">{{item.name}}</option>
+                             
+                            </select>
+
+                           
+                          </div> 
+
+
+                   
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Save" >
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
